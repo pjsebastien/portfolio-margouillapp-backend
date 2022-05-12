@@ -1,0 +1,85 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Project",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "category_project": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category-project.category-project",
+      "inversedBy": "projects"
+    },
+    "slider": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "client": {
+      "type": "string"
+    },
+    "isHomepage": {
+      "type": "boolean",
+      "default": false
+    },
+    "technos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::techno.techno",
+      "inversedBy": "projects"
+    },
+    "image_links": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::image-link.image-link",
+      "inversedBy": "projects"
+    },
+    "googlePlayUrl": {
+      "type": "string"
+    },
+    "appleStoreUrl": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}
