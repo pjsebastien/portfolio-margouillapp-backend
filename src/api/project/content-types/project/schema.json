@@ -80,6 +80,9 @@
     },
     "link": {
       "type": "string"
+    },
+    "videoLink": {
+      "type": "string"
     }
   }
 }
